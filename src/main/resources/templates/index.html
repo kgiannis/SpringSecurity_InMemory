@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		xmlns:th="http://www.thymeleaf.org" >
+		
+<head>
+	<title>Index</title>
+	<meta http-equiv="Content-Type" />
+</head>
+
+<body>
+
+	Username: <span th:text="${username}"></span><br/>
+	<span th:text="${msg}"></span><br/>
+	
+	<div th:if="${hide == true}">
+		<a th:href="@{/login}">Login</a>
+	</div>
+	
+	<hr/>
+
+	<div th:if="${hide == false}">
+		<p>ADMIN only</p>
+		<a th:href="@{/admin}">Index</a>
+		<a th:href="@{/admin/path}">Path</a>
+		<hr/>
+	</div>
+	
+	<div th:if="${hide == false}">
+		<p>USER only</p>
+		<a th:href="@{/user}">Index</a>
+		<a th:href="@{/user/path}">Path</a>
+		<hr/>
+	</div>
+	
+	<div th:if="${hide == false}">
+		<p>ADMIN - USER</p>
+		<a th:href="@{/adus}">Index</a>
+		<a th:href="@{/adus/path}">Path</a>
+	</div>
+	
+	
+	<br/>
+	<a th:href="@{/logout}">Logout</a>
+
+</body>
+
+</html>
+	
